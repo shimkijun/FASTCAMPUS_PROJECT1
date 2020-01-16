@@ -3,6 +3,7 @@ package com.example.admin_project.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity // == table
-//@Table(name ="user") == 클래스 명과 테이블 명이 같으면 작성 x
+@ToString(exclude = {"orderGroups"})
 public class User {
 
     @Id
@@ -31,4 +32,7 @@ public class User {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
+    // User 1 : N OrderGroup
+    @OneToMany(fetch = FetchType.LAZY , mappedBy = "user")
+    private  List<OrderGroup> orderGroups;
 }

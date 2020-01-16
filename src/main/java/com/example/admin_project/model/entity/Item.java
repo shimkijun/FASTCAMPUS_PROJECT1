@@ -3,6 +3,8 @@ package com.example.admin_project.model.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+import org.hibernate.criterion.Order;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"orderDetails","partner"})
 public class Item {
 
     @Id
@@ -30,5 +33,13 @@ public class Item {
     private String createdBy;
     private LocalDateTime updatedAt;
     private String updatedBy;
-    private Long partnerId;
+
+    // Item N : 1 Partner
+    @ManyToOne
+    private Partner partner;
+
+    // Item 1 : N OrderDetail
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "item")
+    private List<OrderDetail> orderDetails;
+
 }
