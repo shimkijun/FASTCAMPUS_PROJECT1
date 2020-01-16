@@ -1,5 +1,6 @@
 package com.example.admin_project.repository;
 
+import com.example.admin_project.model.entity.Item;
 import com.example.admin_project.model.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -19,8 +20,8 @@ public class UserRepositoryTest {
     @Test
     void create(){
         User user = new User();
-        user.setAccount("TestUser02");
-        user.setEmail("TestUser02@gmail.com");
+        user.setAccount("TestUser01");
+        user.setEmail("TestUser01@gmail.com");
         user.setPhoneNumber("010-1111-3333");
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("admin");
@@ -30,11 +31,15 @@ public class UserRepositoryTest {
     }
 
     @Test
+    @Transactional
     void read(){
-        Optional<User> user = userRepository.findById(10L);
-
+        // select * from user where id = ?
+        Optional<User> user = userRepository.findByAccount("TestUser01");
         user.ifPresent(selectUser ->{
-            System.out.println("user : " + selectUser );
+            selectUser.getOrderDetails().stream().forEach(detail ->{
+                Item item = detail.getItem();
+                System.out.println(item);
+            });
         });
     }
 
