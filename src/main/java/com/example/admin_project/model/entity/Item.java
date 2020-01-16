@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class Item {
     private String name;
     private String title;
     private String content;
-    private Integer price;
+    private BigDecimal price;
     private String brandName;
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
