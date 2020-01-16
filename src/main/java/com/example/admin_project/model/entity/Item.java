@@ -30,8 +30,4 @@ public class Item {
     private LocalDateTime updatedAt;
     private String updatedBy;
 
-
-    // 1 : N
-    @OneToMany(fetch = FetchType.LAZY , mappedBy = "item")
-    private List<OrderDetail> orderDetails;
 }
