@@ -1,5 +1,6 @@
 package com.example.admin_project.model.entity;
 
+import com.example.admin_project.model.enumclass.ItemStatus;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.criterion.Order;
@@ -27,7 +28,9 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private ItemStatus status;
     private String name;
     private String title;
     private String content;

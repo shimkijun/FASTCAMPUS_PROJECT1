@@ -2,6 +2,7 @@ package com.example.admin_project.service;
 
 import com.example.admin_project.ifs.CrudInterface;
 import com.example.admin_project.model.entity.User;
+import com.example.admin_project.model.enumclass.UserStatus;
 import com.example.admin_project.model.network.Header;
 import com.example.admin_project.model.network.request.UserApiRequest;
 import com.example.admin_project.model.network.response.UserApiResponse;
@@ -35,7 +36,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
         User user = User.builder()
                 .account(userApiRequest.getAccount())
                 .password(userApiRequest.getPassword())
-                .status("REGISTERED")
+                .status(UserStatus.REGISTERED)
                 .phoneNumber(userApiRequest.getPhoneNumber())
                 .email(userApiRequest.getEmail())
                 .registeredAt(LocalDateTime.now())
@@ -103,7 +104,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
                 .password(user.getPassword())
                 .email(user.getEmail())
                 .phoneNumber(user.getPhoneNumber())
-                .status(user.getStatus())
+                .status(UserStatus.REGISTERED)
                 .registeredAt(user.getRegisteredAt())
                 .unregisteredAt(user.getUnregisteredAt())
                 .build();

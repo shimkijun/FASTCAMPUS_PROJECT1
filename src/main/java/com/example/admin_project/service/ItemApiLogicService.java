@@ -80,6 +80,10 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
     }
 
     private Header<ItemApiResponse> response(Item item){
+
+        // 문자
+        String statusTitle = item.getStatus().getTitle();
+
         ItemApiResponse body = ItemApiResponse.builder()
                 .id(item.getId())
                 .status(item.getStatus())
