@@ -1,20 +1,20 @@
-package com.example.study.sampledata;
-
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Category;
-import com.example.study.model.entity.Partner;
-import com.example.study.repository.CategoryRepository;
-import com.example.study.repository.PartnerRepository;
+package com.example.admin_project.sample;
+import com.example.admin_project.model.entity.Category;
+import com.example.admin_project.model.entity.Partner;
+import com.example.admin_project.repository.CategoryRepository;
+import com.example.admin_project.repository.PartnerRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class PartnerSample extends StudyApplicationTests {
+@SpringBootTest
+public class PartnerSample{
 
     private Random random;
 

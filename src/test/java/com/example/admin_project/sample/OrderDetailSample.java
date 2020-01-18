@@ -1,18 +1,18 @@
-package com.example.study.sampledata;
+package com.example.admin_project.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Item;
-import com.example.study.model.entity.OrderDetail;
-import com.example.study.model.entity.OrderGroup;
-import com.example.study.model.entity.User;
-import com.example.study.model.enumclass.OrderType;
-import com.example.study.repository.ItemRepository;
-import com.example.study.repository.OrderDetailRepository;
-import com.example.study.repository.OrderGroupRepository;
-import com.example.study.repository.UserRepository;
+import com.example.admin_project.model.entity.Item;
+import com.example.admin_project.model.entity.OrderDetail;
+import com.example.admin_project.model.entity.OrderGroup;
+import com.example.admin_project.model.entity.User;
+import com.example.admin_project.model.enumclass.OrderType;
+import com.example.admin_project.repository.ItemRepository;
+import com.example.admin_project.repository.OrderDetailRepository;
+import com.example.admin_project.repository.OrderGroupRepository;
+import com.example.admin_project.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -21,7 +21,8 @@ import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class OrderDetailSample extends StudyApplicationTests {
+@SpringBootTest
+public class OrderDetailSample{
 
     private Random random = new Random();
 
@@ -114,7 +115,6 @@ public class OrderDetailSample extends StudyApplicationTests {
                 .orderAt(getRandomDate())
                 .totalQuantity(itemCount)
                 .arrivalDate(getRandomDate().plusDays(3))
-                .orderDetailList(orderHistoryDetails)
                 .build();
 
         orderGroupRepository.save(orderGroup);

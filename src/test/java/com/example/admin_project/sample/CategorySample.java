@@ -1,18 +1,18 @@
-package com.example.study.sampledata;
+package com.example.admin_project.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Category;
-import com.example.study.repository.CategoryRepository;
+import com.example.admin_project.model.entity.Category;
+import com.example.admin_project.repository.CategoryRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.TestPropertySource;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
-public class CategorySample extends StudyApplicationTests {
+@SpringBootTest
+public class CategorySample{
 
     @Autowired
     private CategoryRepository categoryRepository;

@@ -1,4 +1,4 @@
-package com.example.study.model.network;
+package com.example.admin_project.model.network;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

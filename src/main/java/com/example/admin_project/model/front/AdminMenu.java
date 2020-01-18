@@ -1,4 +1,4 @@
-package com.example.study.model.front;
+package com.example.admin_project.model.front;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

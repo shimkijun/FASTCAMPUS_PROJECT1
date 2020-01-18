@@ -1,17 +1,17 @@
-package com.example.study.sampledata;
+package com.example.admin_project.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.Category;
-import com.example.study.model.entity.Item;
-import com.example.study.model.entity.Partner;
-import com.example.study.model.enumclass.ItemStatus;
-import com.example.study.repository.CategoryRepository;
-import com.example.study.repository.ItemRepository;
-import com.example.study.repository.PartnerRepository;
-import com.sun.xml.internal.ws.util.CompletedFuture;
+
+import com.example.admin_project.model.entity.Category;
+import com.example.admin_project.model.entity.Item;
+import com.example.admin_project.model.entity.Partner;
+import com.example.admin_project.model.enumclass.ItemStatus;
+import com.example.admin_project.repository.CategoryRepository;
+import com.example.admin_project.repository.ItemRepository;
+import com.example.admin_project.repository.PartnerRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -19,7 +19,8 @@ import java.util.List;
 import java.util.Random;
 
 @Slf4j
-public class ItemSample extends StudyApplicationTests {
+@SpringBootTest
+public class ItemSample{
 
     private Random random = new Random();
 

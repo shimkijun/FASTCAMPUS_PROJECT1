@@ -1,21 +1,19 @@
-package com.example.study.sampledata;
+package com.example.admin_project.sample;
 
-import com.example.study.StudyApplicationTests;
-import com.example.study.model.entity.AdminUser;
-import com.example.study.model.entity.User;
-import com.example.study.model.enumclass.UserStatus;
-import com.example.study.repository.AdminUserRepository;
-import com.example.study.repository.UserRepository;
+import com.example.admin_project.model.entity.User;
+import com.example.admin_project.model.enumclass.UserStatus;
+import com.example.admin_project.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
 import java.util.Random;
 
 @Slf4j
-public class UserSample extends StudyApplicationTests {
+@SpringBootTest
+public class UserSample{
 
     private Random random;
 

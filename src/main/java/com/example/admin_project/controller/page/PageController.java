@@ -1,6 +1,6 @@
-package com.example.study.controller.page;
+package com.example.admin_project.controller.page;
 
-import com.example.study.service.AdminMenuService;
+import com.example.admin_project.service.AdminMenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

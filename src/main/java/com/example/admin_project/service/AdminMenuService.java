@@ -1,6 +1,6 @@
-package com.example.study.service;
+package com.example.admin_project.service;
 
-import com.example.study.model.front.AdminMenu;
+import com.example.admin_project.model.front.AdminMenu;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
